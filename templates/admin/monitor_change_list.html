@@ -1,0 +1,14 @@
+{% extends 'admin/change_list.html' %}
+{% block object-tools %}
+  <form action="import/" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Import" />
+  </form>
+  <form action="export/" method="GET">
+    {% csrf_token %}
+    <input type="submit" value="Export" />
+  </form>
+    {{ block.super }}
+{% endblock %}
+
+<!-- add import and export buttons next to add 'item' button -->
